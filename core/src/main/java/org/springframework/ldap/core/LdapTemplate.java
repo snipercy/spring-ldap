@@ -1834,7 +1834,7 @@ public class LdapTemplate implements LdapOperations, InitializingBean {
         searchControls.setReturningAttributes(attributes);
         
         if (LOG.isDebugEnabled()) {
-            LOG.debug(String.format("Searching - base=%1$s, finalFilter=%2$s, scope=%3$s", base, finalFilter, searchControls));
+            LOG.debug(String.format("Searching - base=%1$s, finalFilter=%2$s, scope=%3$s", localBase, finalFilter, searchControls));
         }
 
         List<T> result = search(localBase, finalFilter.encode(), searchControls, new ContextMapper<T>() {
